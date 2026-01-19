@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Cart Quantity</title>
+        <script>
+            let cartQuantity = 0;
+            function showQuantity() {
+                console.log("Cart Quantity:" + cartQuantity);
+            }
+
+
+            function updateCartQuantity(update){
+                if (cartQuantity+update>10){
+                    alert(`cart is Full!`)
+                    return
+                }else{
+                    cartQuantity +=update;
+                    console.log("Cart Quantity:" + cartQuantity);
+                }
+                
+
+            }
+
+            // function plusTwo(){
+            //     if (cartQuantity+2>10){
+            //         alert(`Cart is Full!`)
+            //     }else{
+            //          cartQuantity +=2;
+            //     console.log("Cart Quantity:" + cartQuantity);
+
+            //     }
+            // }
+            // function plusThree(){
+            //     if (cartQuantity+3>10){
+            //         alert(`Cart is Full!`)
+            //     }else{
+            //        cartQuantity +=3;
+            //     console.log("Cart Quantity:" + cartQuantity);
+
+            //     }
+                
+            // }
+            function resetCart(){
+                cartQuantity=0;
+                console.log("Cart Quantity:" + cartQuantity);
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Cart Quantity</h1>
+        <button onclick="showQuantity()">Show Quantity</button>
+        <button onclick="if (cartQuantity+1>10){alert(`Cart is Full!`)}else{cartQuantity++;} console.log(`Cart Quantity: ${cartQuantity}`)">Add to Cart</button>
+        <button onclick="updateCartQuantity(2)">+2</button>
+        <button onclick="updateCartQuantity(3)">+3</button>
+        <button onclick="resetCart()">Reset Cart</button>
+        <button onclick="updateCartQuantity(4)">+4</button>
+        <button onclick="updateCartQuantity(5)">+5</button>
+        <button onclick="if (cartQuantity - 1 <0){alert(`Not enough items in the cart`)}else{cartQuantity--;} console.log(`Cart Quantity: ${cartQuantity}`)">-1</button>
+    </body>
+</html>

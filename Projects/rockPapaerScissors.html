@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <script>
+           
+
+            let choice=""; 
+            function Rock() {
+                const computer=Math.random()
+                if (computer<1/3){
+                    alert("Tie,You choose Rock and computer also choose Rock")
+                }else if(computer >1/3 && computer < 2/3){
+                    alert("Loss,You choose Rock and Computer choose Paper")
+                }else{
+                    alert("Win,You choose Rock and Computer choose Scissors")
+                }
+                choice='rock';
+                
+            }
+            function Paper() {
+                const computer=Math.random()
+                if (computer<1/3){
+                    alert("Win,You choose Rock and computer  choose Rock")
+                }else if(computer >1/3 && computer < 2/3){
+                    alert("Tie,You choose Paper and Computer also choose Paper")
+                }else{
+                    alert("Loss,You choose Rock and Computer choose Scissors")
+                }
+                choice='rock';
+            }
+            function Scissors(){
+                const computer=Math.random()
+                if (computer<1/3){
+                    alert("Loss,You choose Rock and computer also choose Rock")
+                }else if(computer >1/3 && computer < 2/3){
+                    alert("Win,You choose Rock and Computer choose Paper")
+                }else{
+                    alert("Tie,You choose Rock and Computer choose Scissors")
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        <button onclick="Rock()">Rock</button>
+        <button onclick="Paper()">Paper</button>
+        <button onclick="Scissors()">Scissors</button>
+    </body>
+
+</html>
