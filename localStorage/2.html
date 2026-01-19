@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head><title>Local Storage</title></head>
+    <script>
+        //we can only save data in Local storage in format
+        const University={
+            name:"Standford",
+            country:"America",
+        }
+
+    //Code to send the object in local storage in string format as local storage saves data in string format only
+        localStorage.setItem('university', JSON.stringify(University));
+    //Code to get the object from local storage and then convert it back to js object format     
+        console.log(JSON.parse(localStorage.getItem('university')))
+    </script>
+    <body>
+
+    </body>
+</html>

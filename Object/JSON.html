@@ -1,0 +1,42 @@
+<!--ON is another object that we get in js , it is same as the normal object but it dont contain the extra
+fucntionality of the js
+JSON is understood by all programming language and we use this object format to communicate over the internet-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>JSON object</title>
+        <script>
+            //IN JSON we cannot use the "" quotatin we have to use single quotation
+            //ans the property are also written with ' '
+            // JSON does not suppor function
+            //json in more universal that's why we use json format when we use data
+            const student={
+                'name':'swaraj',
+                'roll':'21',
+                'class':'12',
+            }
+            
+            const University = {
+                name:'Standford Uiversity',
+                country:'America',
+                fun: function Selected(){
+                    console.log(`Congrats you have been selected to Standford University`)
+                }
+            }
+
+            //to convert js object to JSON 
+            const jsonObject=JSON.stringify(University);
+
+            console.log(jsonObject);
+
+            //to convert JSON object to js object
+            const jsObject=JSON.parse(jsonObject);
+            console.log(jsObject);
+
+           
+        </script>
+        <body>
+          
+        </body>
+    </head>
+</html>
