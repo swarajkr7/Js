@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Calculator</title>
+        <script>
+            let calculation="";
+
+            calculation=localStorage.getItem('lastCalcualtion')||'';
+
+            function updateCalculation(num){
+                calculation+=`${num}`;
+                console.log(calculation);
+                localStorage.setItem('lastCalcualtion', calculation);
+            }
+            
+            function evaluateCalculation(){
+                calculation=eval(calculation);
+                console.log(eval(calculation));
+                localStorage.setItem('lastCalcualtion', calculation);
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+        <button onclick="updateCalculation('1')">1</button>
+        <button onclick="updateCalculation('2')">2</button>
+        <button onclick="updateCalculation('3')">3</button>
+        <button onclick="updateCalculation(' + ')">+</button>
+        
+        </p>
+        <p>
+        <button onclick="updateCalculation('4')">4</button>
+        <button onclick="updateCalculation('5')">5</button>
+        <button onclick="updateCalculation('6')">6</button>
+        <button onclick="updateCalculation(' - ')">-</button>
+        
+            
+        </p>
+        <p>
+        <button onclick="updateCalculation('7')">7</button>
+        <button onclick="updateCalculation('8')">8</button>
+        <button onclick="updateCalculation('9')">9</button>
+        <button onclick="updateCalculation(' * ')">*</button>
+        
+            
+        </p>
+        <p>
+        <button onclick="updateCalculation('0')">0</button>
+        <button onclick="updateCalculation('.')">.</button>
+        <button onclick="evaluateCalculation()">=</button>
+        <button onclick="updateCalculation(' / ')">/</button>
+        
+        </p>
+        <p>
+            <button onclick="calculation=''; console.log('Cleared!');
+            localStorage.setItem('lastCalcualtion', calculation);
+            ">Cleared</button>
+        </p>
+        
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Dom Projects</title>
+
+    </head>
+    <body>
+        <p>Youtube Subscribe Button</p>
+        <button onclick="subscribe()">Subscribe</button>
+        <script>
+            function subscribe(){
+                if(document.querySelector('button').innerText==='Subscribe'){
+            document.querySelector('button').innerText='Subscribed';
+        }else{
+            document.querySelector('button').innerText='Subscribe'; 
+        }
+                
+            }
+            //differece betwee innerText and innerHTML is that innerHTML can add html tags also but 
+            //innerText can only add text and innerHTML consider all space and lines but in
+            //innerText it ignore space and lines and only consider text
+        </script>
+    </body>
+</html>
