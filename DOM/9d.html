@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        <button onclick="document.querySelector('.result').innerText=`You chose:heads`">heads</button>
+        <button onclick="document.querySelector('.result').innerText=`You chose:tails`">tails</button>
+        <p class="result"></p>
+        <script>
+            function display(){
+                let button=document.querySelector("button").innerText;
+                console.log(button)
+                if (button==="heads"){
+                    document.querySelector('.result').innerText=`You chose:${button}`
+                }else {
+                    
+                }
+
+            }
+            
+        </script>
+    </body>
+</html>

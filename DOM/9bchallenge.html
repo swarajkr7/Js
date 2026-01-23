@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Calculator</title>
+        
+    </head>
+    <body>
+        <p>
+        <button onclick="updateCalculation('1')">1</button>
+        <button onclick="updateCalculation('2')">2</button>
+        <button onclick="updateCalculation('3')">3</button>
+        <button onclick="updateCalculation(' + ')">+</button>
+        
+        </p>
+        <p>
+        <button onclick="updateCalculation('4')">4</button>
+        <button onclick="updateCalculation('5')">5</button>
+        <button onclick="updateCalculation('6')">6</button>
+        <button onclick="updateCalculation(' - ')">-</button>
+        
+            
+        </p>
+        <p>
+        <button onclick="updateCalculation('7')">7</button>
+        <button onclick="updateCalculation('8')">8</button>
+        <button onclick="updateCalculation('9')">9</button>
+        <button onclick="updateCalculation(' * ')">*</button>
+        
+            
+        </p>
+        <p>
+        <button onclick="updateCalculation('0')">0</button>
+        <button onclick="updateCalculation('.')">.</button>
+        <button onclick="evaluateCalculation()">=</button>
+        <button onclick="updateCalculation(' / ')">/</button>
+        
+        </p>
+        <p>
+            <button onclick="clearCalculation()">Cleared</button>
+        </p>
+        <p class="display"></p>
+
+        <script>
+            let calculation=localStorage.getItem('calculation')||'';
+            console.log(calculation);
+            document.querySelector('.display').innerText=calculation;
+
+            function updateCalculation(num){
+                calculation+=`${num}`;
+                document.querySelector('.display').innerText=calculation;
+            }
+
+            function evaluateCalculation(){
+                if(calculation==="") return;
+                calculation=eval(calculation);
+                document.querySelector('.display').innerText=calculation;
+                localStorage.setItem('calculation',calculation);
+                
+            }
+
+            function clearCalculation(){
+                calculation='0';
+                localStorage.setItem('calculation',calculation);
+                document.querySelector('.display').innerText=calculation;
+                
+            }
+        </script>
+        
+    </body>
+</html>

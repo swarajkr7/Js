@@ -7,6 +7,10 @@
     <body>
         <p>Youtube Subscribe Button</p>
         <button onclick="subscribe()">Subscribe</button>
+        <p>Amazon Shipping Calculator</p>
+        <input class="costInput" onkeydown="handleKeydown(event)" placeholder="Place your order">
+        <button onclick="calculateShipping()">Calclate</button>
+        <p class="totalCost"></p>
         <script>
             function subscribe(){
                 if(document.querySelector('button').innerText==='Subscribe'){
@@ -20,6 +24,28 @@
             //innerText can only add text and innerHTML consider all space and lines but in
             //innerText it ignore space and lines and only consider text
             // the main differce is innerHTML can add html tags also but innerText can only add text
+
+            function handleKeydown(event){
+                if(event.key==='Enter'){
+                    calculateShipping();
+                }
+            }
+            function calculateShipping(event){
+
+                const inputElement=document.querySelector('.costInput').value;
+
+                let cost =Number(inputElement);
+                //wheneve we get value from dom we get it in string format so here we should convert it into number 
+                //to operate on it 
+
+               if (cost<50){
+                cost=cost+10;
+               }else{
+                cost;
+               }
+               document.querySelector('.totalCost').innerText=`Total Cost is $${cost}`;
+            }
+            
         </script>
     </body>
 </html>
