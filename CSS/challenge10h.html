@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>10h challenge</title>
+
+    </head>
+    <body>
+        <p>Amazon Shipping Calculator</p>
+        <input class="costInput" onkeydown="handleKeydown(event)" placeholder="Place your order">
+        <button onclick="calculateShipping()">Calclate</button>
+        <p class="totalCost"></p>
+        <script>
+
+            function handleKeydown(event){
+                if(event.key==='Enter'){
+                    calculateShipping();
+                }
+            }
+            function calculateShipping(event){
+
+                const inputElement=document.querySelector('.costInput').value;
+
+                let cost =Number(inputElement);
+
+                if (cost>=50){
+                    cost;
+                    document.querySelector('.totalCost').innerText=`Total Cost is $${cost}`;
+                }else if( cost>0 && cost<50){
+                    cost=cost+10;
+                    document.querySelector('.totalCost').innerText=`Total Cost is $${cost}`;
+                }else if(cost<0){
+                    document.querySelector('.totalCost').innerText=`Error  cost cannot be less than $0`;
+                    document.querySelector('.totalCost').style.color='red';
+                }
+               
+            }
+            
+        </script>
+    </body>
+</html>

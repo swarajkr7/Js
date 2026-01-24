@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Calculator</title>
+        <style>
+            body {
+                background-color: black;
+            }
+            .num{
+                background-color: rgb(51, 51, 51);
+                color: white;
+                height: 60px;
+                width: 60px;
+                border-radius: 60px;
+                border: none;
+                font-size: 26px;
+                cursor: pointer;
+                margin-right: 5px;
+            }
+            .operator{
+                background-color: rgb(254, 160, 10);
+                color: white;
+                height: 60px;
+                width: 60px;
+                border-radius: 60px;
+                border: none;
+                font-size: 26px;
+                cursor: pointer;
+                margin-right: 5px;
+            }
+
+            .clear{
+                background-color: rgb(51, 51, 51);
+                color: white;
+                height: 60px;
+                width: 60px;
+                border-radius: 60px;
+                border: none;
+                cursor: pointer;
+                margin-right: 5px;
+            }
+            .display{
+                color:white;
+                font-size: 36px;
+                margin-left:10px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <p class="display"></p>
+        <p>
+        <button class="num" onclick="updateCalculation('1')">1</button>
+        <button class="num" onclick="updateCalculation('2')">2</button>
+        <button class="num" onclick="updateCalculation('3')">3</button>
+        <button class="operator" onclick="updateCalculation(' + ')">+</button>
+        
+        </p>
+        <p>
+        <button class="num" onclick="updateCalculation('4')">4</button>
+        <button class="num" onclick="updateCalculation('5')">5</button>
+        <button class="num" onclick="updateCalculation('6')">6</button>
+        <button class="operator" onclick="updateCalculation(' - ')">-</button>
+        
+            
+        </p>
+        <p>
+        <button class="num" onclick="updateCalculation('7')">7</button>
+        <button class="num" onclick="updateCalculation('8')">8</button>
+        <button class="num" onclick="updateCalculation('9')">9</button>
+        <button class="operator" onclick="updateCalculation(' * ')">*</button>
+        
+            
+        </p>
+        <p>
+        <button class="num" onclick="updateCalculation('0')">0</button>
+        <button class="num" onclick="updateCalculation('.')">.</button>
+        <button class="num" onclick="evaluateCalculation()">=</button>
+        <button class="operator" onclick="updateCalculation(' / ')">/</button>
+        
+        </p>
+        <p>
+            <button class="clear" onclick="clearCalculation()">Clear</button>
+        </p>
+        
+
+        <script>
+            let calculation=localStorage.getItem('calculation')||'';
+            console.log(calculation);
+            document.querySelector('.display').innerText=calculation;
+
+            function updateCalculation(num){
+                if(calculation===0){
+                    calculation=num;
+                }else{
+                    calculation+=`${num}`;
+                    document.querySelector('.display').innerText=calculation;
+                }
+                
+            }
+
+            function evaluateCalculation(){
+                if(calculation==="") return;
+                calculation=eval(calculation);
+                document.querySelector('.display').innerText=calculation;
+                localStorage.setItem('calculation',calculation);
+                
+            }
+
+            function clearCalculation(){
+                calculation='0';
+                localStorage.setItem('calculation',calculation);
+                document.querySelector('.display').innerText=calculation;
+                
+            }
+        </script>
+        
+    </body>
+</html>

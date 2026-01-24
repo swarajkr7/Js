@@ -1,0 +1,17 @@
+.not-toggled {
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 15px;
+}
+
+.is-toggled {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 15px;
+}

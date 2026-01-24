@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Button Toggle</title>
+        <style>
+            .not-toggled {
+                background-color: whitesmoke;
+                color:black;
+                border: none;
+                border-radius:5px;
+                padding:15px;
+                font-size: 15px;
+
+            }
+            .is-toggled{
+                background-color: black;
+                color:white;
+                border: none;
+                border-radius:5px;
+                padding:15px;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <button class="not-toggled" onclick="isToglled()">Gaming</button>
+        <script>
+            function isToglled(){
+                let button=document.querySelector('button');
+                if(button.classList.contains('is-toggled')){
+                    button.classList.remove('is-toggled')
+
+                }else{
+                    button.classList.add('is-toggled')
+                }
+            }
+            
+            
+        </script>
+
+    </body>
+</html>
