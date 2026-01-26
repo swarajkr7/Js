@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>App</title>
+    </head>
+    <body>
+        <button onclick="message++">Add</button>
+        <button onclick="message--">Remove</button>
+        <script>
+            let message=2;
+            let i=2;
+            setInterval(function(){
+                i++;
+                if(i%2===0){
+                    document.title=`App`;
+                }else{
+                    document.title=`(${message})new messages`;
+                }
+            },1000);
+
+        </script>
+    </body>
+</html>

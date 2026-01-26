@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Advanced Functions</title>
+    </head>
+    <body>
+        <script>
+
+            /*----------------Anonymous Function------------*/
+
+
+            const num=2;            //Functions are nothing but values, so we can store it in variable
+            const function1=function(){ //As long as we have a way to access a function we dont
+                                            //  need this function name
+                console.log("Hello");
+            }
+           //this type of function is called anonymous function means function without name
+            function1();
+            //hoisting is a functionality in javascript in which we dont have to declare function
+            //before calling it but it only work when we dont use function through variable
+            //function saved inside the object is called method
+
+            /*------------ Method(Function inside the function)-----------*/
+
+
+            const object1={
+                name:'swaraj',
+                fun:function(){//here also we can remove the name of the function and it will 
+                                                    //work fine 
+                    console.log("Hello");
+                }
+            }
+             object1.fun();
+
+           /*---------------------------Call Back Funtion-------------------------*/
+
+
+           function run(param){
+            param()
+           }
+
+           run(function(){
+             console.log("Good Morning!")
+           })
+
+           /*------------------------setTimeout()-----------------------*/
+           //setTimout allows  us to run a function in future
+           //it take two values first is the function and the second is time after which 
+           //you want to run the function
+
+        //    setTimeout(function(){
+        //     console.log("Good Night");
+        //    },3000)
+
+        //    console.log("Goodd Morning!");
+
+           //In javascript when we write code it is synchronous only but in some cases it becomes
+           //Asynchronous which means computer will not wait for a line to get complete and it will 
+           //move to next one.
+           //Synchronous means computer  will wait for a line to execute completely then it 
+           //will move to the next line.
+
+           /*------------------------------setInterval-----------------------------*/ 
+           //setInterval also make the javascript code asynchronous
+           //It takes function and time interval after which it keeps on calling the function after
+           //every time interval.
+
+        //    setInterval(function(){
+        //     console.log('setInterval')
+        //    },3000);
+
+           //setInterval return an IntervId and by using that id we can stop the setInterval 
+
+           /*-------------------Another way to loop through the Arrat----------------------*/
+         const animal=[
+            'bird',
+            'cat',
+            'dog'
+        ].forEach((value,index)=>{
+            if(value==='cat'){
+                return;//behaves the same way as continue
+            }
+            console.log(value);
+            console.log(index);
+         });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Anonymous Function</title>
+    </head>
+    <body>
+        <script>
+            const FUN=function(){
+                console.log(2+3);
+            }
+
+            function runTwice(fun){
+                fun();
+                fun();
+            }
+
+            runTwice(function (){
+                console.log("15b");
+            })
+        </script>
+
+    </body>
+</html>

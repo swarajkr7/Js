@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Arrow Function</title>
+    </head>
+    <body>
+        <script>
+            /*---------------------Arrow Function--------------------*/
+            const arrowFunction=()=>{
+                console.log("Hello World!");
+            }
+
+
+            const multiplication=(num1,num2)=>{
+                return num1*num2;
+            }
+
+            arrowFunction();
+            console.log(multiplication(2,3));
+
+            const incrementOne=(num)=>{
+                return num+=1;
+            }
+
+            console.log(incrementOne(3));
+           /*---------------------------Arrow Function Shortcuts------------------------*/
+           
+            const decrementOne = num =>{//In arrow function if only one parameter is there then we dont
+                                        //have to use () also we can direct write the parameter
+                return num-=1;
+            }
+
+            console.log(decrementOne(2));
+
+            /*----------------------------Oneline Function--------------------*/
+
+            const sum= (num1,num2) => num1 + num2;//in one line function we dont even curly brackets({})
+                                                    //and return statements
+            console.log(sum(2,3));
+
+
+
+            /*------------------------Arrow function inside Object------------------------*/ 
+
+            const obj={
+                method:()=>{
+
+                },
+                method(){//we can also define an fucntion inside object
+
+                }
+            }
+            //whenever you an function inside an function it is better to use an arrow function
+        </script>
+    </body>
+</html>

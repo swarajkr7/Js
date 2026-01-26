@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            //Array are references meanns they dont store actual value they give reference to the 
+            //memory location at which the are stored
+            //variables in which they are stored
+
+            let arr=[1,2,3,4];
+            let ar=arr;
+            console.log(arr)//
+            console.log(ar)//arr is not getting copied in ar it is just referencing to same adddress to
+            //which arr is referencing
+            ar.push(5);//we pushed value in ar but we are seeing the same pushed value in arr also
+            //bcz of the same reason they both give refernce to same vlue .
+            console.log(arr);
+
+
+            //Now if we really want to copy an array then there is one method;
+            let array=arr.splice(0,4);
+            array.push(6);
+            //Now here we are able to push '6' in array and it is not getting pushed to arr
+            //bcz they both are now different array or we can say they are referencing to different 
+            //memory allocation.
+            console.log(array);
+        </script>
+
+    </body>
+</html>

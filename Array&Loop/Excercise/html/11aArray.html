@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Array Exercise</title>
+    </head>
+    <body>
+        <script>
+            const array=['hello','world','good','search'];
+            
+            // for(let i=0; i<array.length; i++){
+            //     if(array[i]==='search'){
+            //         console.log(i);
+            //     }else{
+            //         console.log(-1);
+            //     }
+            // }
+
+            //Modified version of the above code
+
+            // for(let i=0; i<array.length; i++){
+            //     if(array[i]==='search'){
+            //         // console.log(i);
+            //         break;
+            //     }
+            // }
+
+            function findIndex(array,word){
+                for(let i=0; i<array.length; i++){
+                    if(array[i]===word){
+                        return i;
+                    }
+                }
+                return -1;
+            }
+
+            let arr=['egg','egg','apple','egg','egg','strawberry','ham'];
+
+            // function removeEggs(array){
+            //     let arr=[];
+            //     let j=0;
+            //     for(let i=0; i<array.length; i++){
+            //         if(array[i]==='egg'){
+            //             continue;
+            //         }else{
+            //             arr[j++]=array[i]
+
+            //         }
+            //     }
+            //     return arr;
+            // }
+            
+            // console.log(removeEggs(arr))
+
+
+            // function removeFirstTwoEgg(array){
+            //     let arr=[];
+            //     let j=0;
+            //     let count=0;
+            //     for(let i=0; i<array.length; i++){
+            //         if(array[i]==='egg'){
+            //             count++;
+            //             if(count<=2){
+            //                 continue;
+            //             }
+            //             else{
+            //                 arr[j++]=array[i];
+            //             }
+            //         }else{
+            //             arr[j++]=array[i];
+            //         }
+            //     }
+            //     return arr;
+            // }
+
+            // function removeLastTwoEgg(array){
+            //     let arrray=array.reverse().slice(0,array.length);
+            //     let arr=[];
+            //     let j=0;
+            //     let count=0;
+            //     for(let i=0; i<arrray.length; i++){
+            //         if(arrray[i]==='egg'){
+            //             count++;
+            //             if(count<=2){
+            //                 continue;
+            //             }
+            //             else{
+            //                 arr[j++]=arrray[i];
+            //             }
+            //         }else{
+            //             arr[j++]=arrray[i];
+            //         }
+            //     }
+            //     return arr;
+
+            // }
+            
+            // for(let i=1; i<=20; i++){
+            //     if(i%3===0&&i%5===0){
+            //         console.log("FizzBuzz")
+            //     }else if(i%5===0){
+            //         console.log("Buzz")
+            //     }else if(i%3===0){
+            //         console.log("Fizz");
+            //     }else{
+            //         console.log(i)
+            //     }
+            // }
+
+            function unique(array){
+                const result=[];
+
+                for(let i=0; i<array.length; i++){
+                    const word=array[i];
+
+                    if(findIndex(result,word)===-1){
+                        result.push(word);
+                    }
+                }  
+                return result; 
+            }
+
+           console.log(unique(arr));
+           
+        </script>
+    </body>
+</html>

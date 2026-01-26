@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Anonymous Function</title>
+    </head>
+    <body>
+        <button class="start" onclick="change()">Start</button>
+        <script>
+            function change(){
+                document.querySelector('.start').innerText="Loading...";
+                setTimeout(function(){ 
+                    document.querySelector('.start').innerText="Finished";
+                },1000); 
+            }
+            
+        </script>
+    </body>
+</html>

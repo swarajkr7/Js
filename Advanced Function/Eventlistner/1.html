@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Add Eventlistner</title>
+    </head>
+    <body>
+        <button class="js-button">Click</button>
+        <script>
+            const buttonElement=document.querySelector('.js-button');
+            const Eventlistner=()=>{
+                console.log("Click")
+            };
+
+            buttonElement.addEventListener('click',Eventlistner);
+
+            buttonElement.removeEventListener('click',Eventlistner);
+
+            buttonElement.addEventListener('click',()=>{
+                console.log("Click2");
+            })
+
+            //Advantage of Addeventlistner is that is can take multiple eventlistner for one event.
+        </script>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>App</title>
+    </head>
+    <body>
+        <button onclick="change(1)">Add</button>
+        <button onclick="change(-1)">Remove</button>
+        <script>
+             let message=2;
+             let m=`(${message})new message`;
+             let i=2;
+             let sec=0;
+             let isPrime=false;
+
+             setInterval(function(){
+                let time=new Date();
+                sec=time.getSeconds();
+                console.log("Current second:", sec);
+                
+                // Check if second is prime
+                if(sec < 2){
+                    isPrime = false;
+                } else {
+                    isPrime = true;
+                    for(let i=2; i<=Math.sqrt(sec); i++){
+                        if(sec % i === 0){
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                }
+                
+                console.log("Is prime:", isPrime);
+                if(isPrime){
+                    document.title=`App (${sec} is PRIME)`;
+                }else{
+                    document.title=`App (${sec} is NOT prime)`;
+                }
+             },1000);
+
+             
+           
+            function change(n){
+                if(message+n>=0){
+                    if(message+n>0){
+                        message+=n;
+                       m=`(${message})new message`;
+                    }else{
+                        message+=n;
+                    }
+                    
+                }   
+            }
+            
+        </script>
+    </body>
+</html>

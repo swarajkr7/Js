@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Anonymous Function</title>
+    </head>
+    <body>
+        <button class="start" onclick="change()">Add to Cart</button>
+        <p class="message"></p>
+        <script>
+           
+            let timeoutId=0;
+            function change(){
+
+                let messageElement=document.querySelector('.message');
+                messageElement.innerText="Added";
+
+                clearTimeout(timeoutId);
+
+                timeoutId=setTimeout(function(){
+                    messageElement.innerText='';
+                },2000);
+
+            }
+            
+        </script>
+    </body>
+</html>
