@@ -4,12 +4,19 @@
         <title>App</title>
     </head>
     <body>
-        <button onclick="message++">Add</button>
-        <button onclick="message--">Remove</button>
+        <button class="button1" >Add</button>
+        <button class="button-1" >Remove</button>
         <script>
+            document.querySelector('.button1').addEventListener('click',()=>{
+                inDec(1);
+            })
+            document.querySelector('.button-1').addEventListener('click',()=>{
+                inDec(-1);
+            })
+            const inDec=(num)=>{message+=num};
             let message=2;
             let i=2;
-            setInterval(function(){
+            setInterval(()=>{
                 i++;
                 if(i%2===0){
                     document.title=`App`;

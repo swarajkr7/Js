@@ -4,10 +4,13 @@
         <title>Anonymous Function</title>
     </head>
     <body>
-        <button class="start" onclick="change()">Add to Cart</button>
+        <button class="start">Add to Cart</button>
         <p class="message"></p>
         <script>
-            function change(){
+            document.querySelector('.start').addEventListener('click',()=>{
+                change();
+            })
+            const change=()=>{
                document.querySelector('.message').innerText="Added to cart"
                setTimeout(function(){
                 document.querySelector('.message').innerText="";

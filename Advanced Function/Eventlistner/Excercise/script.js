@@ -5,27 +5,71 @@
                 };
 
             displayResult();
+                
+            document.querySelector('.reset-button').addEventListener('click',()=>{
+                reset();
+            })
+            document.body.addEventListener('keydown',(event)=>{
+                if(event.key=' '){
+                    reset();
+                }
+            })
 
+            let html='';
+            
             function reset(){
-                score.Wins=0;
-                score.Losses=0;
-                score.Ties=0;
-                localStorage.removeItem('score');
-                displayResult();
+                let html=`
+                <div>
+                <p>
+                Are you sure you want to reset the score?
+                <button class="yes">Yes</button>
+                <button class="No">No</button>
+                </p>
+                </div>
+                `;
+                 document.querySelector('.yesNo').innerHTML=html;
+
+                (document.querySelector)('.yes').addEventListener('click',()=>{
+                    html=``;
+                    document.querySelector('.yesNo').innerHTML=html;
+                    score.Wins=0;
+                    score.Losses=0;
+                    score.Ties=0;
+                    localStorage.removeItem('score');
+                    displayResult();
+
+                })
+                document.querySelector('.No').addEventListener('click',()=>{
+                    html=``;
+                    document.querySelector('.yesNo').innerHTML=html;
+                    return ;
+                });
             }
 
             let isAutoPlay=false;
             let intervalId=0;
 
+            document.querySelector('.auto-play-button').addEventListener('click',()=>{
+                autoPlay();
+            })
+
+            document.body.addEventListener('keydown',(event)=>{
+                if(event.key==='a'){
+                    autoPlay();
+                }
+            })
+           
             function autoPlay(){
                 if (!isAutoPlay){
                         intervalId=setInterval(()=>{
                         const playerMove=randomNumber();
                         playGame(playerMove);
+                        document.querySelector('.auto-play-button').innerText="Stop Playing";
                     },500);
                     isAutoPlay=true;
                 }else
                     {
+                        document.querySelector('.auto-play-button').innerText="Auto Play";
                     clearInterval(intervalId);
                     isAutoPlay=false;
                 }

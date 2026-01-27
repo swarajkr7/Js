@@ -4,21 +4,28 @@
         <title>App</title>
     </head>
     <body>
-        <button onclick="change(1)">Add</button>
-        <button onclick="change(-1)">Remove</button>
+        <button class="button1" >Add</button>
+        <button class="button-1" >Remove</button>
         <script>
+
+            document.querySelector('.button1').addEventListener('click',()=>{
+                change(1);
+            })
+            document.querySelector('.button-1').addEventListener('click',()=>{
+                change(-1);
+            })
              let message=2;
              let m=`(${message})new message`;
              let i=2;
              let sec=0;
              let isPrime=false;
 
-             setInterval(function(){
+             setInterval(()=>{
                 let time=new Date();
                 sec=time.getSeconds();
                 console.log("Current second:", sec);
                 
-                // Check if second is prime
+        
                 if(sec < 2){
                     isPrime = false;
                 } else {
@@ -39,8 +46,7 @@
                 }
              },1000);
 
-             
-           
+    
             function change(n){
                 if(message+n>=0){
                     if(message+n>0){

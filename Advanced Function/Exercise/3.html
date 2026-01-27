@@ -4,9 +4,12 @@
         <title>Anonymous Function</title>
     </head>
     <body>
-        <button class="start" onclick="change()">Start</button>
+        <button class="start">Start</button>
         <script>
-            function change(){
+           document.querySelector('.start').addEventListener('click',()=>{
+                changes();
+           }) 
+           const changes=()=>{
                 setTimeout(function(){
                     document.querySelector('.start').innerText="Finished";
                 },1000); 

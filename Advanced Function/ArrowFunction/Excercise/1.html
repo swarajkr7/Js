@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Arrow Function</title>
+    </head>
+    <body>
+        <script>
+            const multiplication=(num1,num2)=>{
+                return num1*num2
+            }
+
+
+            function countPositive(array){
+                let count=0;
+                array.forEach((value,index)=>{
+                    if(value>0){
+                        count++;
+                    }
+                })
+                return count;
+            }
+
+            function addNum(array,num){
+                return   array.map(value=>{
+                     return value+=num;
+                })
+                
+            }
+
+            function removeEgg(array){
+                let c=0;
+                return array.filter((value,index)=>{
+                    if(value==='egg'&&c<2){
+                        c++;
+                        return false;
+                    }else{
+                        return true;
+                    }
+                })
+
+            }
+            console.log(multiplication(2,3));
+            console.log(countPositive([1,2,-3,4,-5]))
+            console.log(addNum([1,2,3],3));
+            console.log(removeEgg(['hawve','hawvehawve','egg','egg','egg','cat']));
+        </script>
+    </body>
+</html>

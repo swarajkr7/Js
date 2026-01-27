@@ -26,10 +26,8 @@ function renderToDOList(){
             Delete
             </button>
             `;
-            toDoListHTML+=html;
-            
 
-
+            toDoListHTML+=html;        
         })   
         document.querySelector('.js-toDoList').innerHTML=toDoListHTML;
 
