@@ -8,6 +8,18 @@
             //happens due to the way in which the javascript interpret the numbers
             //as computer understands only 0's and 1's they have problem in writing the decimal 
             //number exactly
+
+            console.log(7.99+20.95);
+            //lets assume that the above value is dollar
+            //so to avoide the above error we can simply convert to cents then convert bak again to dollar
+            console.log((799+2095)/100)
+            //now it works perfectly fine
+
+            /*------------------------Math.round()----------------------*/
+            console.log(Math.round(20.8))
+            console.log(Math.round(20.2))
+            //it roundoff to nearest integer
+            
         </script>
     </body>
 </html>
